@@ -1,20 +1,17 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-const EmployeeCard = ({ name, position }) => {
-  const [salary, setSalary] = useState(0);
+class EmployeeCard extends React.Component {
+  render() {
+    const { name, position, duration } = this.props;
 
-  const increaseSalary = () => {
-    setSalary(salary + 1000);
-  };
-
-  return (
-    <div>
-      <h2>{name}</h2>
-      <p>Position: {position}</p>
-      <p>Salary: ${salary}</p>
-      <button onClick={increaseSalary}>Increase Salary</button>
-    </div>
-  );
-};
+    return (
+      <div>
+        <h2>{name}</h2>
+        <p>Position: {position}</p>
+        <p>Years Employeed: {duration}</p>
+      </div>
+    );
+  }
+}
 
 export default EmployeeCard;
